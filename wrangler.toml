@@ -7,24 +7,24 @@ port = 8787
 local_protocol = "http"
 
 [env.vars]
-CUSTOM_DOMAIN = "libcuda.so"
+CUSTOM_DOMAIN = "xop.cc"
 
 [env.dev.vars]
 MODE = "debug"
 TARGET_UPSTREAM = "https://registry-1.docker.io"
-CUSTOM_DOMAIN = "exmaple.com"
+CUSTOM_DOMAIN = "xop.cc"
 
 [env.production]
 name = "cloudflare-docker-proxy"
-# routes = [
-#   { pattern = "docker.libcuda.so", custom_domain = true },
-#   { pattern = "quay.libcuda.so", custom_domain = true },
-#   { pattern = "gcr.libcuda.so", custom_domain = true },
-#   { pattern = "k8s-gcr.libcuda.so", custom_domain = true },
-#   { pattern = "k8s.libcuda.so", custom_domain = true },
-#   { pattern = "ghcr.libcuda.so", custom_domain = true },
-#   { pattern = "cloudsmith.libcuda.so", custom_domain = true },
-# ]
+routes = [
+  { pattern = "docker.xop.cc", custom_domain = true },
+  { pattern = "quay.xop.cc", custom_domain = true },
+  { pattern = "gcr.xop.cc", custom_domain = true },
+  { pattern = "k8s-gcr.xop.cc", custom_domain = true },
+  { pattern = "k8s.xop.cc", custom_domain = true },
+  { pattern = "ghcr.xop.cc", custom_domain = true },
+  { pattern = "cloudsmith.xop.cc", custom_domain = true },
+]
 
 [env.production.vars]
 MODE = "production"
